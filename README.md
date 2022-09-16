@@ -21,8 +21,8 @@ Link : https://github.com/heezzing/project6.git
 ------
 
 ### 프로젝트 개요
-<img width="1003" alt="스크린샷 2022-09-16 오후 11 56 58" src="https://user-images.githubusercontent.com/97447841/190669030-18982799-781b-4e35-91d2-4a252d350f19.png">
-<img width="1003" alt="스크린샷 2022-09-16 오후 11 57 11" src="https://user-images.githubusercontent.com/97447841/190669075-04f0d5fb-a51a-4529-a634-c140be6a3f23.png">
+<img width="700" alt="스크린샷 2022-09-16 오후 11 56 58" src="https://user-images.githubusercontent.com/97447841/190669030-18982799-781b-4e35-91d2-4a252d350f19.png">
+<img width="700" alt="스크린샷 2022-09-16 오후 11 57 11" src="https://user-images.githubusercontent.com/97447841/190669075-04f0d5fb-a51a-4529-a634-c140be6a3f23.png">
 
 - 주제 :Raspberry Pi를 이용한 자율주행 RC CAR
 - 주제 선정 이유 : 자율주행이 사고 방지에 어느 정도 역할을 수행할 수 있을지 알기 위해 주제를 선정하였습니다.
@@ -59,7 +59,7 @@ Link : https://github.com/heezzing/project6.git
 ------
 
 ### 프로젝트 구조
-<img width="1003" alt="스크린샷 2022-09-17 오전 12 00 29" src="https://user-images.githubusercontent.com/97447841/190669807-92e3be68-4634-4316-9902-4cd2ce068194.png">
+<img width="700" alt="스크린샷 2022-09-17 오전 12 00 29" src="https://user-images.githubusercontent.com/97447841/190669807-92e3be68-4634-4316-9902-4cd2ce068194.png">
 
 1. 라즈베리파이에 라즈비안OS를 설치하고 기본 환경 세팅을 합니다.
 2. 프로젝트에 필요한 환경 구축을 위해 파이썬, opencv등 라이브러리를 설치합니다.
@@ -70,7 +70,7 @@ Link : https://github.com/heezzing/project6.git
 ------
 
 ### 프로젝트 수행 결과
-<img width="1003" alt="스크린샷 2022-09-17 오전 12 01 38" src="https://user-images.githubusercontent.com/97447841/190670058-6c4bc1aa-4531-4c7c-95ee-7af5a2b89c54.png">
+<img width="700" alt="스크린샷 2022-09-17 오전 12 01 38" src="https://user-images.githubusercontent.com/97447841/190670058-6c4bc1aa-4531-4c7c-95ee-7af5a2b89c54.png">
 
 - Raspberry Pi
     - Raspbian os 64bit 설치하였습니다.
@@ -83,7 +83,7 @@ Link : https://github.com/heezzing/project6.git
     - GPIO 라이브러리로 모터 속도를 제어하였습니다.
     - adafruit 라이브러리로 조향용 서보모터를 제어하였습니다.
 
-<img width="1003" alt="스크린샷 2022-09-17 오전 12 02 25" src="https://user-images.githubusercontent.com/97447841/190670221-f4fdc1e6-785b-4085-bd74-a1dbd3631725.png">
+<img width="700" alt="스크린샷 2022-09-17 오전 12 02 25" src="https://user-images.githubusercontent.com/97447841/190670221-f4fdc1e6-785b-4085-bd74-a1dbd3631725.png">
 
 - 카메라를 통해 opencv라이브러리를 이용하여 기초적인 차선 인식 주행을 하였습니다.
 - Lane detection Algorithms를 이용하였습니다.
@@ -91,6 +91,31 @@ Link : https://github.com/heezzing/project6.git
 - 라인 세그먼트를 1또는 2개의 차선 라인으로 결합해 라인 기울기에 따라 좌우 차선을 감지합니다.
 - 최선 좌표를 기반해 조향 각도를 찾은 뒤 감지한 차선을 따라 주행을 하며 데이터 가공을 위한 영상 데이터를 수집합니다.
 
-<img width="1003" alt="스크린샷 2022-09-17 오전 12 03 06" src="https://user-images.githubusercontent.com/97447841/190670347-6a3b63d1-b84d-4092-9cdd-741218e5e63e.png"><img width="1003" alt="스크린샷 2022-09-17 오전 12 03 19" src="https://user-images.githubusercontent.com/97447841/190670381-1348540b-5ee1-445c-93a4-481df0fb5132.png">
+<img width="700" alt="스크린샷 2022-09-17 오전 12 03 06" src="https://user-images.githubusercontent.com/97447841/190670347-6a3b63d1-b84d-4092-9cdd-741218e5e63e.png">
+<img width="700" alt="스크린샷 2022-09-17 오전 12 03 19" src="https://user-images.githubusercontent.com/97447841/190670381-1348540b-5ee1-445c-93a4-481df0fb5132.png">
 
+- 딥러닝 차선 인식 주행을 하기위해 PNG이미지와 이미지에 기록된 차선 각도를 이용하여 데이터 라벨링을 하였습니다.
+- 이미지를 사용하여 정보를 정확히 파악하고 자동차의 조향 각도를 예측하기 위해 Nvidia모델을 사용하였습니다.
+- Nvidia Model
+    - 카메라로 입력받아 차량의 조향각도를 예측하여 출력하는 회귀모델입니다.
+    - Nvidia모델에 사용된 CNN레이어는 총 30개층으로 구성되며 먼저 선과 가장자리를 추출한 뒤 마지막 신경 레이어를 통과하여 조향각도를 예측합니다.
+    - 예측 각도는 주어진 이미지에서 원하는 조향각도와 비교되고 오류는 역전파를 통해 CNN훈련 프로세스로 피드백 됩니다.
 
+------
+
+### 시연 영상
+
+- 시연 영상 1
+    - https://youtube.com/shorts/YQ5VaTC-17k?feature=share
+    
+- 시연 영상 2
+    - https://youtu.be/qjYvi7tAHwM
+
+------
+
+### 느낀점
+
+- 처음 목표는 자율주행과 객체탐지를 접목하여 구동하는 RC카를 만드는 것 이었습니다.
+- Raspberry Pi에 개발환경을 구축하는게 생각보다 힘들었고 거기에 많은 시간을 소비해서 목표한바를 이루지 못해 아쉽습니다.
+- 처음부터 시간을 잘 분배했다면 완성도가 더 높았을거 같습니다.
+- 이번프로젝트를 통해 자율주행에 더 흥미를 느끼게 되었고 미완성된 프로젝트를 마무리 하고 싶습니다.
