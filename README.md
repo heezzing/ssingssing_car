@@ -4,7 +4,7 @@ Date : 2022.7.11~2022.8.5
 
 Tags : `RaspberryPi` `OpenCV` `Tensorflow` `Keras` `Python`
 
-Link : 
+Link : https://github.com/heezzing/project6.git
 
 발표영상 : [https://youtu.be/etcQFuLz-nA](https://youtu.be/etcQFuLz-nA)
 
