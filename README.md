@@ -8,7 +8,7 @@ Link : https://github.com/heezzing/project6.git
 
 발표영상 : [https://youtu.be/etcQFuLz-nA](https://youtu.be/etcQFuLz-nA)
 
-시연영상 
+시연영상 :
 
-    1. [https://youtube.com/shorts/YQ5VaTC-17k?feature=share](https://youtube.com/shorts/YQ5VaTC-17k)
-    2. [https://youtu.be/qjYvi7tAHwM](https://youtu.be/qjYvi7tAHwM)
+  - [https://youtube.com/shorts/YQ5VaTC-17k?feature=share](https://youtube.com/shorts/YQ5VaTC-17k)
+  - [https://youtu.be/qjYvi7tAHwM](https://youtu.be/qjYvi7tAHwM)
