@@ -79,7 +79,7 @@ Link : https://github.com/heezzing/project6.git
     - opencv는 4.6.0버전을 설치하였습니다.
     - Tensorflow,keras 2.8.0버전을 설치하였습니다.
     - 각 라이브러리마다 호환 여부가 틀리기 때문에 환경을 재구축 하는 등 시행착오가 많았습니다.
-- 하드웨어 조립
+- 하드웨어 
     - GPIO 라이브러리로 모터 속도를 제어하였습니다.
     - adafruit 라이브러리로 조향용 서보모터를 제어하였습니다.
 
